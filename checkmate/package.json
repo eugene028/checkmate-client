@@ -9,12 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mui/system": "^5.15.15",
     "npm": "^10.8.1",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
-    "next": "14.2.3",
     "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
@@ -22,15 +22,15 @@
     "@mui/material": "^5.15.19",
     "@mui/material-nextjs": "^5.15.11",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
-    "@mui/styles": "^5.15.19",
     "@mui/x-charts": "^7.6.1",
     "@mui/x-date-pickers": "^7.6.1",
-    "dayjs": "^1.11.11",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "dayjs": "^1.11.11",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
+    "next": "14.2.3",
     "typescript": "^5"
   },
   "peerDependencies": {
