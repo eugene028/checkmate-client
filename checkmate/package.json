@@ -9,6 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "npm": "^10.8.1",
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "next": "14.2.3",
     "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
@@ -20,14 +26,6 @@
     "@mui/x-charts": "^7.6.1",
     "@mui/x-date-pickers": "^7.6.1",
     "dayjs": "^1.11.11",
-    "install": "^0.13.0",
-    "next": "14.2.3",
-    "npm": "^10.8.1",
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0",
-    "styled-components": "^6.1.11"
-  },
-  "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
