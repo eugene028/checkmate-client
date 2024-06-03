@@ -1,95 +1,123 @@
+import StickyHeader from "../components/StickyHeader";
+import AlertBox from "@/components/AlertBox";
+import FoodBox from "@/components/FoodBox";
+import { Divider } from "@mui/material";
+import Chip from "@/components/Chip";
 import Image from "next/image";
-import styles from "./page.module.css";
+import MainPageDatePicker from "@/components/DatePicker";
+import RoundChart from "@/components/Chart/RoundChart";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <StickyHeader />
+      <MainPageDatePicker />
+      <div
+        style={{
+          padding: "0px 1rem",
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
+          alignItems: "center",
+          gap: "1.25rem",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "1.25rem",
+            width: "100%",
+            height: "50%",
+            overflow: "scroll",
+          }}
+        >
+          <FoodBox
+            imgSrc="/img/croisant.png"
+            brandName="빠리바게트"
+            foodName="크루아상"
+            glucose={20}
+            sugars={5}
+            calorie={114}
+            eatTime="12:00"
+          />
+          <FoodBox
+            imgSrc="/img/ice_cream.png"
+            brandName="롯데제과"
+            foodName="부라보콘"
+            glucose={36}
+            sugars={23}
+            calorie={270}
+            eatTime="15:00"
+          />
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+        <AlertBox
+          leftElement={
+            <Image src="/img/Run.png" width={40} height={43} alt="run" />
+          }
+          mainMessage="혈당 스파이크 예방하기"
+          subMessage="급격한 혈당이 오르는 것을 방지해요!"
         />
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+      <Divider
+        orientation="horizontal"
+        variant="middle"
+        flexItem
+        style={{ margin: "1.25rem 0px" }}
+      />
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div
+          style={{
+            flex: 2,
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            padding: "0px 0px 0px 2rem",
+            gap: "1rem",
+          }}
         >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <div>
+            <div style={{ fontSize: "18px", fontWeight: 700 }}>
+              목표 당 설정기준보다
+            </div>
+            <div>
+              <span
+                style={{ fontSize: "18px", fontWeight: 700, color: "#FC6678" }}
+              >
+                3g{" "}
+              </span>
+              <span style={{ fontSize: "18px", fontWeight: 700 }}>
+                더 섭취했어요. 🫠
+              </span>
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "0.625rem",
+            }}
+          >
+            <Chip variant="outline" label="스파이크 1회  발생 🗯️" />
+            <Chip variant="outline" label="총 384kcal 섭취" />
+            <Chip variant="outline" label="2회의 운동 🏃‍♀️" />
+          </div>
+        </div>
+        <RoundChart />
       </div>
+      <div style={{ fontSize: "15px", fontWeight: 600, padding: "0px 2rem" }}>
+        하루 권장 칼로리의{" "}
+        <span style={{ fontSize: "15px", fontWeight: 600, color: "#FC6678" }}>
+          20%를
+        </span>{" "}
+        간식으로 소비했어요.
+      </div>
+      <Divider
+        orientation="horizontal"
+        variant="middle"
+        flexItem
+        style={{ margin: "1.25rem 0px" }}
+      />
     </main>
   );
 }
