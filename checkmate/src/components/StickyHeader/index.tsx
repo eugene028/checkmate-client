@@ -28,7 +28,6 @@ const StickyHeaderContainer = styled.div`
 const StickyHeaderWrapper = styled.div`
   position: fixed;
   display: flex;
-
   padding: 0.625rem 1.125rem;
   align-items: center;
   justify-content: space-between;

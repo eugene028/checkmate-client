@@ -4,6 +4,7 @@ import FoodBox from "@/components/FoodBox";
 import { Divider } from "@mui/material";
 import Chip from "@/components/Chip";
 import Image from "next/image";
+import Navigation from "@/components/Navigation";
 import MainPageDatePicker from "@/components/DatePicker";
 import RoundChart from "@/components/Chart/RoundChart";
 
@@ -68,12 +69,13 @@ export default function Home() {
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div
           style={{
-            flex: 2,
+            position: "relative",
             display: "flex",
             flexDirection: "column",
-            width: "100%",
-            padding: "0px 0px 0px 2rem",
+            padding: "0px 2rem 0px 2rem",
             gap: "1rem",
+            minWidth: "200px",
+            marginBottom: "1rem",
           }}
         >
           <div>
@@ -102,8 +104,8 @@ export default function Home() {
             <Chip variant="outline" label="총 384kcal 섭취" />
             <Chip variant="outline" label="2회의 운동 🏃‍♀️" />
           </div>
+          <RoundChart />
         </div>
-        <RoundChart />
       </div>
       <div style={{ fontSize: "15px", fontWeight: 600, padding: "0px 2rem" }}>
         하루 권장 칼로리의{" "}
@@ -118,6 +120,7 @@ export default function Home() {
         flexItem
         style={{ margin: "1.25rem 0px" }}
       />
+      <Navigation />
     </main>
   );
 }

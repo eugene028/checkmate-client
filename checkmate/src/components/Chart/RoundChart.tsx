@@ -5,16 +5,17 @@ const RoundChart = () => {
   return (
     <div
       style={{
-        position: "relative",
+        position: "absolute",
         textAlign: "center",
-        flex: 1,
+        left: "100%",
+        bottom: "-15%",
       }}
     >
       <div
         style={{
           position: "absolute",
           top: "40%",
-          left: "24%",
+          left: "14%",
           display: "flex",
           flexDirection: "column",
         }}
@@ -43,7 +44,6 @@ const RoundChart = () => {
         sx={{
           display: "flex",
           justifyContent: "center",
-          marginLeft: "50px",
           transform: "translate(50,50)",
           "& g": {
             marginLeft: "20px",
