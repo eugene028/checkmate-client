@@ -1,14 +1,20 @@
 "use client";
 import styled from "@emotion/styled";
+
+import { useRouter } from "next/navigation";
 import QueryStatsRoundedIcon from "@mui/icons-material/QueryStatsRounded";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import FastfoodRoundedIcon from "@mui/icons-material/FastfoodRounded";
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import AddIcon from "@mui/icons-material/Add";
-import { MouseEventHandler, useState } from "react";
+import { useState } from "react";
 import { Fab } from "@mui/material";
+import { routePath } from "@/constants/routhPath";
+
 const Navigation = () => {
   const [selectedMenu, setSelectedMenu] = useState("home");
+  const router = useRouter();
+
   const menu = [
     {
       id: "home",
@@ -77,7 +83,14 @@ const Navigation = () => {
       <NavigationWrapper>
         {menu.map((item, index) => {
           if (item.id === "floatingButton") {
-            return <FabWrapper>{item.icon}</FabWrapper>;
+            return (
+              <FabWrapper
+                key={index}
+                onClick={() => router.push(routePath["check-modal"])}
+              >
+                {item.icon}
+              </FabWrapper>
+            );
           } else {
             return (
               <NavigationItemWrapper

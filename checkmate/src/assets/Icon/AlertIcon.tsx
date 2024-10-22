@@ -20,9 +20,9 @@ export const AlertIcon = (props: SVGProps<SVGSVGElement>) => {
         <path
           d="M9 17V18C9 18.7956 9.31607 19.5587 9.87868 20.1213C10.4413 20.6839 11.2044 21 12 21C12.7956 21 13.5587 20.6839 14.1213 20.1213C14.6839 19.5587 15 18.7956 15 18V17"
           stroke="#FC6678"
-          stroke-width="1.6"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>

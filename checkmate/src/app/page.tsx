@@ -7,8 +7,10 @@ import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import MainPageDatePicker from "@/components/DatePicker";
 import RoundChart from "@/components/Chart/RoundChart";
+import { checkUserAgent } from "@/utils/checkUserAgent";
 
 export default function Home() {
+  const isDesktop = checkUserAgent() === "desktop";
   return (
     <main>
       <StickyHeader />
@@ -120,7 +122,7 @@ export default function Home() {
         flexItem
         style={{ margin: "1.25rem 0px" }}
       />
-      <Navigation />
+      {isDesktop ? <Navigation /> : <></>}
     </main>
   );
 }

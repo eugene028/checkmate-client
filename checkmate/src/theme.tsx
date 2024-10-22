@@ -18,6 +18,7 @@ const theme = createTheme({
           maxWidth: "520px",
           minHeight: "100dvh",
           width: "520px",
+          positions: "relative",
         },
         main: {
           position: "relative",
