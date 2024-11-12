@@ -7,6 +7,7 @@ import StarIcon from "@/assets/Icon/StarIcon";
 import { useState } from "react";
 import styled from "@emotion/styled";
 import FoodList from "./components/FoodList";
+import Chip from "@/components/Chip";
 
 const ApplyFoodPage = () => {
   const [food, setFood] = useState("");
@@ -49,6 +50,13 @@ const ApplyFoodPage = () => {
       <FoodSelectedList>
         <FoodSelectedContainer>
           <span style={{ fontSize: "12px", color: "gray" }}>섭취한 음식</span>
+          <FoodNameList>
+            {selectedFoodList?.size > 0 ? (
+              Array.from(selectedFoodList).map((data) => <Chip label={data} />)
+            ) : (
+              <div>섭취한 음식을 선택해주세요</div>
+            )}
+          </FoodNameList>
           <Button
             variant="contained"
             fullWidth
@@ -91,4 +99,11 @@ const FoodSelectedContainer = styled.div`
   position: relative;
   padding: 11px 0px;
   height: 100%;
+`;
+
+const FoodNameList = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding-top: 5px;
 `;

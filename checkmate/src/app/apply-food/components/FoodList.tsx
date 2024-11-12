@@ -11,7 +11,7 @@ const FoodList = ({
   setSelectedFoodList,
 }: {
   foodValue: string;
-  setSelectedFoodList: Dispatch<SetStateAction<string[]>>;
+  setSelectedFoodList: Dispatch<SetStateAction<Set<string>>>;
 }) => {
   const [selectedCategory, setSelectedCategory] = useState("");
   return (
@@ -34,7 +34,15 @@ const FoodList = ({
             <div
               key={id}
               onClick={() => {
-                setSelectedFoodList((prev) => new Set(prev).add(name));
+                setSelectedFoodList((prev) => {
+                  const newSet = new Set(prev);
+                  if (newSet.has(name)) {
+                    newSet.delete(name);
+                  } else {
+                    newSet.add(name);
+                  }
+                  return newSet; // Return the new Set instance
+                });
               }}
             >
               <FoodMenuItem

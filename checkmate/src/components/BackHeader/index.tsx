@@ -2,7 +2,7 @@
 import styled from "@emotion/styled";
 import RightArrow from "@/assets/Icon/RightArrow";
 
-const BackHeader = ({ label }: { label: string }) => {
+const BackHeader = ({ label }: { label?: string }) => {
   return (
     <StickyHeaderContainer>
       <StickyHeaderWrapper>
