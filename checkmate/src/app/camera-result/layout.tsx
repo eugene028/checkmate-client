@@ -12,6 +12,7 @@ const CameraResultFoodLayout = ({
 }) => {
   return (
     <main>
+      <BackHeader />
       <div style={{ padding: "0px 16px" }}>{children}</div>
     </main>
   );

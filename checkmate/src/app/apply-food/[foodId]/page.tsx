@@ -31,21 +31,21 @@ const FoodDetailPageInfo = () => {
         <GraphBox>
           <SmallTitle>혈당 예측</SmallTitle>
           <LineChart />
-          <Button
-            variant="contained"
-            fullWidth
-            size="large"
-            sx={{
-              color: "white",
-              backgroundColor: "#FC6678",
-              position: "absolute",
-              bottom: "40px",
-              left: "0px",
-            }}
-          >
-            선택하기
-          </Button>
         </GraphBox>
+        <Button
+          variant="contained"
+          fullWidth
+          size="large"
+          sx={{
+            color: "white",
+            backgroundColor: "#FC6678",
+            position: "absolute",
+            bottom: "40px",
+            left: "0px",
+          }}
+        >
+          선택하기
+        </Button>
       </FoodDetailContainer>
     </main>
   );
@@ -95,7 +95,7 @@ const DetailInfoList = styled.div`
 `;
 
 const GraphBox = styled.div`
-  height: 300px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   gap: 12px;

@@ -1,13 +1,15 @@
 "use client";
+import { useRouter } from "next/navigation";
 import styled from "@emotion/styled";
 import RightArrow from "@/assets/Icon/RightArrow";
 
 const BackHeader = ({ label }: { label?: string }) => {
+  const router = useRouter();
   return (
     <StickyHeaderContainer>
       <StickyHeaderWrapper>
         <HeaderLogoWrapper>
-          <RightArrow />
+          <RightArrow onClick={() => router.back()} />
           {label}
         </HeaderLogoWrapper>
       </StickyHeaderWrapper>

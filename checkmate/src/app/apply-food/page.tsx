@@ -3,14 +3,17 @@ import FoodMenuItem from "@/components/FoodMenu";
 import { LikedFoodMenu } from "@/constants/foodMenu";
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
+import { useRouter } from "next/navigation";
 import StarIcon from "@/assets/Icon/StarIcon";
 import { useState } from "react";
 import styled from "@emotion/styled";
 import FoodList from "./components/FoodList";
 import Chip from "@/components/Chip";
+import { routePath } from "@/constants/routhPath";
 
 const ApplyFoodPage = () => {
   const [food, setFood] = useState("");
+  const router = useRouter();
   const [selectedFoodList, setSelectedFoodList] = useState<Set<string>>(
     new Set()
   );
@@ -61,6 +64,9 @@ const ApplyFoodPage = () => {
             variant="contained"
             fullWidth
             size="large"
+            onClick={() => {
+              router.push(routePath["apply-result"]);
+            }}
             sx={{
               color: "white",
               backgroundColor: "#FC6678",

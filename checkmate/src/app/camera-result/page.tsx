@@ -2,21 +2,24 @@
 import FoodMenuItem from "@/components/FoodMenu";
 import { foodInfo } from "@/constants/foodInfo";
 import styled from "@emotion/styled";
+import { useRouter } from "next/navigation";
+import { Button } from "@mui/material";
 
-const ApplyResult = () => {
+const CameraResult = () => {
+  const router = useRouter();
   return (
     <main style={{ position: "relative", height: "97vh" }}>
       <FoodDetailContainer>
         <FoodMainInfo>
-          <StoreName>피코크</StoreName>
-          <FoodName>피코크 통살 닭다리구이 간장맛</FoodName>
+          <StoreName>코카콜라</StoreName>
+          <FoodName>코카콜라</FoodName>
         </FoodMainInfo>
         <ResultBox>
           <div style={{ display: "flex", gap: "5px", alignItems: "center" }}>
-            <NumberTitle>+10</NumberTitle>
+            <NumberTitle>+30</NumberTitle>
             <SmallByte>mg/dL</SmallByte>
           </div>
-          혈당 스파이크가 발생하지 않아요.
+          혈당 스파이크가 발생해요.
         </ResultBox>
         <SmallTitle>영양 성분</SmallTitle>
         <DetailInfoList>
@@ -27,27 +30,48 @@ const ApplyResult = () => {
         <div>
           <SmallTitle>음식 한마디</SmallTitle>
           <div style={{ padding: "10px", wordBreak: "break-word" }}>
-            건강하고 균형 잡힌 식사를 하셨군요! 적절한 탄수화물과 단백질을 갖고
-            있는 식사는 혈당을 천천히 오르게 해 스파이크를 발생시키지 않아요!
+            식사 후에 산책하면 혈당이 빠르게 낮아지고 소화도 잘돼서
+            일석이조예요.
+            <br />
+            당류가 높은 간식 대신, 견과류와 같은 혈당에 긍정적인 영향을 끼치는
+            <br />
+            음식을 섭취하는 것을 권장드려요!
           </div>
         </div>
+        <Button
+          onClick={() => {
+            router.push("/");
+          }}
+          variant="contained"
+          fullWidth
+          size="large"
+          sx={{
+            color: "white",
+            backgroundColor: "#FC6678",
+            position: "absolute",
+            bottom: "70px",
+            left: "0px",
+          }}
+        >
+          확인했어요
+        </Button>
       </FoodDetailContainer>
     </main>
   );
 };
 
-export default ApplyResult;
-
-const FoodDetailContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-`;
+export default CameraResult;
 
 const FoodMainInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
+`;
+
+const FoodDetailContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 `;
 
 const StoreName = styled.div`
@@ -62,20 +86,17 @@ const FoodName = styled.div`
 `;
 
 const NumberTitle = styled.div`
-  color: #009d6e;
+  color: red;
   font-size: 35px;
   font-weight: 800;
 `;
 
 const SmallTitle = styled.div`
   color: gray;
-  font-size: 12x;
 `;
-
 const SmallByte = styled.div`
   font-size: 15px;
   font-weight: 700;
-  color: gray;
 `;
 
 const ResultBox = styled.div`

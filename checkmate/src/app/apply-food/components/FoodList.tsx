@@ -2,6 +2,7 @@
 import FoodMenuItem from "@/components/FoodMenu";
 import { autoMenuList, detailMenu } from "@/constants/foodMenu";
 import styled from "@emotion/styled";
+import { useRouter } from "next/navigation";
 import { Button } from "@mui/material";
 import { ArrowLeftIcon } from "@mui/x-date-pickers";
 import { Dispatch, SetStateAction, useState } from "react";
@@ -14,6 +15,7 @@ const FoodList = ({
   setSelectedFoodList: Dispatch<SetStateAction<Set<string>>>;
 }) => {
   const [selectedCategory, setSelectedCategory] = useState("");
+  const router = useRouter();
   return (
     <FoodListContainer>
       <CustomFoodContainer>
@@ -49,9 +51,15 @@ const FoodList = ({
                 label={name}
                 subLabel={sub}
                 rightElement={
-                  <ArrowLeftIcon
-                    style={{ rotate: "180deg", color: "#fc6678" }}
-                  />
+                  <div
+                    onClick={() => {
+                      router.push(`/apply-food/${id}?name=${name}`);
+                    }}
+                  >
+                    <ArrowLeftIcon
+                      style={{ rotate: "180deg", color: "#fc6678" }}
+                    />
+                  </div>
                 }
               />
             </div>
