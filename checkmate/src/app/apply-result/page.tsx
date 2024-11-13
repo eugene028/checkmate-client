@@ -37,6 +37,8 @@ const ApplyResult = () => {
         <Button
           onClick={() => {
             router.push("/");
+            if (window.ReactNativeWebView)
+              window.ReactNativeWebView.postMessage("goHome");
           }}
           variant="contained"
           fullWidth

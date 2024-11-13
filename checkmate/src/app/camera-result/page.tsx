@@ -41,6 +41,8 @@ const CameraResult = () => {
         <Button
           onClick={() => {
             router.push("/");
+            if (window.ReactNativeWebView)
+              window.ReactNativeWebView.postMessage("goHome");
           }}
           variant="contained"
           fullWidth
@@ -49,7 +51,7 @@ const CameraResult = () => {
             color: "white",
             backgroundColor: "#FC6678",
             position: "absolute",
-            bottom: "70px",
+            bottom: "60px",
             left: "0px",
           }}
         >
