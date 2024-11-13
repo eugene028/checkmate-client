@@ -13,7 +13,7 @@ export default function Home() {
   const isDesktop = checkUserAgent() === "desktop";
   return (
     <main>
-      <StickyHeader />
+      {/* <StickyHeader /> */}
       <MainPageDatePicker />
       <div
         style={{

@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 const ApplyFoodLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main>
-      <BackHeader label="음식 직접 등록하기" />
-      <div style={{ padding: "0px 16px" }}>{children}</div>
+      {/* <BackHeader label="음식 직접 등록하기" />   */}
+      <div style={{ padding: "10px 16px 0px" }}>{children}</div>
     </main>
   );
 };

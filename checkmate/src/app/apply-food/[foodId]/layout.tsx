@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 const ApplyFoodLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main>
-      <div style={{ padding: "0px 16px" }}>{children}</div>
+      <div style={{ padding: "10px 16px 0px" }}>{children}</div>
     </main>
   );
 };
