@@ -12,7 +12,7 @@ import { checkUserAgent } from "@/utils/checkUserAgent";
 export default function Home() {
   const isDesktop = checkUserAgent() === "desktop";
   return (
-    <main>
+    <main style={{ paddingTop: "10px" }}>
       {/* <StickyHeader /> */}
       <MainPageDatePicker />
       <div
