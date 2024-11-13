@@ -2,8 +2,11 @@
 import FoodMenuItem from "@/components/FoodMenu";
 import { foodInfo } from "@/constants/foodInfo";
 import styled from "@emotion/styled";
+import { Button } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 const ApplyResult = () => {
+  const router = useRouter();
   return (
     <main style={{ position: "relative", height: "97vh" }}>
       <FoodDetailContainer>
@@ -31,6 +34,23 @@ const ApplyResult = () => {
             있는 식사는 혈당을 천천히 오르게 해 스파이크를 발생시키지 않아요!
           </div>
         </div>
+        <Button
+          onClick={() => {
+            router.push("/");
+          }}
+          variant="contained"
+          fullWidth
+          size="large"
+          sx={{
+            color: "white",
+            backgroundColor: "#FC6678",
+            position: "absolute",
+            bottom: "70px",
+            left: "0px",
+          }}
+        >
+          확인했어요
+        </Button>
       </FoodDetailContainer>
     </main>
   );
@@ -69,7 +89,6 @@ const NumberTitle = styled.div`
 
 const SmallTitle = styled.div`
   color: gray;
-  font-size: 12x;
 `;
 
 const SmallByte = styled.div`
